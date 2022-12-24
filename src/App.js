@@ -4,7 +4,7 @@ import Landing from "./components/Landing";
 
 const App = () => {
   return (
-    <div>
+    <div className="content">
       <Navbar />
       <Landing />
     </div>

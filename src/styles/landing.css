@@ -1,0 +1,26 @@
+.landing {
+  background-image: url("../images/landing-background.jpg");
+  background-repeat: no-repeat;
+  background-position-y: top;
+  background-position-x: center;
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  height: max-content;
+  width: 100%;
+  background-color: rgba(0,0,0, 0.3);
+  display: flex;
+  justify-content: center;
+  color: #d3e5e2;
+  margin-top: 100px;
+}
+
+
+h1 {
+  font-family: "Courgette";
+  font-size: 72px;
+}
