@@ -1,10 +1,12 @@
+import "../styles/product-card.css";
+
 const ProductCard = (props) => {
   return (
     <div className="product-card">
-      <p>{props.product.title}</p>
-      <p>{props.product.cost}</p>
-      <p>{props.product.description}</p>
-      <img src={props.product.image} alt="" />
+      <img src={props.product.image} alt="packaging for game with cover art"/>
+      <div className="title">{props.product.title}</div>
+      <div className="cost">${props.product.cost}</div>
+      <div className="description">{props.product.description}</div>
     </div>
   );
 };

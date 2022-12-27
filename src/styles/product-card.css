@@ -1,0 +1,22 @@
+.product-card {
+  border: 3px solid #245ed6;
+  border-radius: 8px;
+  width: 440px;
+  padding: 20px;
+  display: grid;
+  justify-items: center;
+  grid-gap: 20px;
+}
+
+.product-card img {
+  height: 340px;
+}
+
+.title {
+  font-weight: 600;
+}
+
+.cost {
+  justify-self: start;
+  color: #245ed6;
+}
