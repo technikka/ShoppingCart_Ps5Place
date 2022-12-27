@@ -1,5 +1,5 @@
 .landing {
-  background-image: url("../images/landing-background.jpg");
+  background-image: url("");
   background-repeat: no-repeat;
   background-position-y: top;
   background-position-x: center;
@@ -21,6 +21,5 @@
 
 
 .landing h1 {
-  font-family: "Courgette";
   font-size: 72px;
 }
