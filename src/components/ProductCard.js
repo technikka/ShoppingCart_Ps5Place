@@ -32,9 +32,15 @@ const ProductCard = (props) => {
   }
 
   const addToCartSuccessMsg = () => {
+    let message;
+    if (quantityRef.current === 1) {
+      message = "1 item was added to your cart."
+    } else {
+      message = `${quantityRef.current} items were added to your cart `
+    }
     return (
       <div className="cart-success-msg">
-        {quantityRef.current} items were added to your cart.
+        {message}
       </div>
     )
   }
