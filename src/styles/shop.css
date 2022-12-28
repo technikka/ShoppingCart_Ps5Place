@@ -3,3 +3,7 @@
   grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
   grid-gap: 50px;
 }
+
+.cart-icon svg {
+  height: 24px;
+}

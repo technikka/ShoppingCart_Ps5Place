@@ -1,10 +1,13 @@
 import "../styles/product-card.css";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons";
 
 const ProductCard = (props) => {
   const [quantity, setQuantity] = useState(1);
+  const [showSuccessMsg, setShowSuccessMsg] = useState(false);
+
+  const quantityRef = useRef(quantity);
 
   const decrementQuantity = () => {
     if (quantity > 1) {
@@ -22,12 +25,25 @@ const ProductCard = (props) => {
     setQuantity(parseInt(event.target.value));
   };
 
+  const handleAddToCart = () => {
+    quantityRef.current = quantity;
+    setShowSuccessMsg(true);
+    props.addToCart(props.product, quantity);
+  }
+
+  const addToCartSuccessMsg = () => {
+    return (
+      <div className="cart-success-msg">
+        {quantityRef.current} items were added to your cart.
+      </div>
+    )
+  }
+
   return (
     <div className="product-card">
       <img src={props.product.image} alt="packaging for game with cover art" />
       <div className="title">{props.product.title}</div>
       <div className="cost">${props.product.cost}</div>
-
       <div className="quantity-container">
         <span>Quantity: </span>
         <button onClick={decrementQuantity} className="decrement">
@@ -38,8 +54,8 @@ const ProductCard = (props) => {
           <FontAwesomeIcon icon={faAngleUp} />
         </button>
       </div>
-
-      <button>Add To Cart</button>
+      {showSuccessMsg === true && (addToCartSuccessMsg())}
+      <button onClick={handleAddToCart} >Add To Cart</button>
       <div className="description">{props.product.description}</div>
     </div>
   );

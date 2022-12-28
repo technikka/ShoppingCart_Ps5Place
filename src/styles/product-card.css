@@ -20,3 +20,7 @@
   justify-self: start;
   color: #245ed6;
 }
+
+.cart-success-msg {
+  color: green;
+}
