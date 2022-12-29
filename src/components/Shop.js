@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../styles/shop.css";
 import Navbar from "./Navbar";
 import ProductCard from "./ProductCard";
+import CartModal from "./CartModal";
 import { products } from "../products";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
@@ -9,6 +10,7 @@ import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 const Shop = () => {
   const [cart, setCart] = useState([]);
   const [numItemsInCart, setNumItemsInCart] = useState(0);
+  const [displayCart, setDisplayCart] = useState(false);
 
   const addToCart = (product, quantity) => {
     let obj = { product: product, quantity: quantity };
@@ -27,7 +29,6 @@ const Shop = () => {
     setNumItemsInCart(calcNumItemsInCart());
   }, [cart]);
 
-
   return (
     <div className="shop-container">
       <Navbar />
@@ -35,6 +36,11 @@ const Shop = () => {
         <div>{numItemsInCart}</div>
         <FontAwesomeIcon icon={faCartShopping} />
       </div>
+      <button onClick={() => {setDisplayCart(true)}}>Checkout</button>
+
+      {displayCart === true && <CartModal cart={cart}/>}
+      {displayCart === true && <div className="backdrop"></div>}
+
       <h1>Shop</h1>
       <div className="products-container">
         {products.map((product) => {
