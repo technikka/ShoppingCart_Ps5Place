@@ -16,9 +16,9 @@ import ThymesiaImg from "./images/thymesia.jpeg";
 import UnchartedImg from "./images/uncharted.jpeg";
 import WildHeartsImg from "./images/wild_hearts.jpeg";
 
-const Product = (title, cost, image, description) => {
+const Product = (title, price, image, description) => {
   let id;
-  return { id, title, cost, image, description };
+  return { id, title, price, image, description };
 };
 
 const products = [];

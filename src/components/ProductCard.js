@@ -57,7 +57,7 @@ const ProductCard = (props) => {
     <div className="product-card">
       <img src={props.product.image} alt="packaging for game with cover art" />
       <div className="title">{props.product.title}</div>
-      <div className="cost">${props.product.cost}</div>
+      <div className="price">${props.product.price}</div>
       <div className="quantity-container">
         <span>Quantity: </span>
         <QuantityControl quantity={quantity} quantityChange={quantityChange} />

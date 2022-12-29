@@ -33,6 +33,7 @@ const QuantityControl = (props) => {
   // };
 
   useEffect(() => {
+    // for use with ProductCard's implementation of this component
     if (props.quantityChange) {
       props.quantityChange(quantity);
     }
