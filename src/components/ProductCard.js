@@ -1,7 +1,6 @@
 import "../styles/product-card.css";
 import React, { useState, useRef } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons";
+import QuantityControl from "./QuantityControl";
 
 const ProductCard = (props) => {
   const [quantity, setQuantity] = useState(1);
@@ -9,26 +8,6 @@ const ProductCard = (props) => {
   const [showErrorMsg, setShowErrorMsg] = useState(false);
 
   const quantityRef = useRef(quantity);
-
-  const decrementQuantity = () => {
-    if (quantity > 1) {
-      setQuantity(quantity - 1);
-    }
-  };
-
-  const incrementQuantity = () => {
-    if (quantity < 7) {
-      setQuantity(quantity + 1);
-    }
-  };
-
-  const handleInput = (event) => {
-    setShowErrorMsg(false);
-    let value = event.target.value;
-    if (value) {
-      setQuantity(parseInt(value));
-    }
-  };
 
   const quantityValid = () => {
     if ([1, 2, 3, 4, 5, 6, 7].includes(quantity)) {
@@ -38,9 +17,14 @@ const ProductCard = (props) => {
     }
   };
 
+  const quantityChange = (newQuantity) => {
+    setShowErrorMsg(false);
+    setShowSuccessMsg(false);
+    setQuantity(newQuantity);
+  };
+
   const handleAddToCart = () => {
     if (!quantityValid()) {
-      setShowSuccessMsg(false);
       setShowErrorMsg(true);
       return;
     }
@@ -76,24 +60,7 @@ const ProductCard = (props) => {
       <div className="cost">${props.product.cost}</div>
       <div className="quantity-container">
         <span>Quantity: </span>
-        <button onClick={decrementQuantity} className="decrement">
-          <FontAwesomeIcon icon={faAngleDown} />
-        </button>
-
-        <input
-          id="quantity"
-          onChange={handleInput}
-          type="number"
-          required
-          min="1"
-          max="7"
-          value={quantity}
-          size="1"
-        />
-
-        <button onClick={incrementQuantity} className="increment">
-          <FontAwesomeIcon icon={faAngleUp} />
-        </button>
+        <QuantityControl quantity={quantity} quantityChange={quantityChange} />
       </div>
 
       {showSuccessMsg === true && addToCartSuccessMsg()}
