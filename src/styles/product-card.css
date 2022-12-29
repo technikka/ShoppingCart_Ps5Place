@@ -24,3 +24,7 @@
 .cart-success-msg {
   color: green;
 }
+
+.cart-error-msg {
+  color: red;
+}
