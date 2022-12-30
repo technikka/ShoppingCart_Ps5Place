@@ -1,5 +1,5 @@
 import "../styles/product-card.css";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import QuantityControl from "./QuantityControl";
 
 const ProductCard = (props) => {
@@ -52,6 +52,10 @@ const ProductCard = (props) => {
     }
     return <div className="cart-error-msg">{message}</div>;
   };
+
+  useEffect(() => {
+    setShowSuccessMsg(false);
+  }, [props.hasViewedCart])
 
   return (
     <div className="product-card">

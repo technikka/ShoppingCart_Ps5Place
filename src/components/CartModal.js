@@ -25,7 +25,7 @@ const CartModal = (props) => {
   }
 
   const calculateOrderTotal = () => {
-    return (parseFloat(itemsTotal) + parseFloat(calculateTaxes()) + shippingFee)
+    return (parseFloat(itemsTotal) + parseFloat(calculateTaxes()) + shippingFee).toFixed(2);
   }
 
   useEffect(() => {
@@ -36,6 +36,8 @@ const CartModal = (props) => {
     <div className="cart-modal">
       <div className="exit-icon" onClick={props.closeModal}><FontAwesomeIcon icon={faXmark} /></div>
       <h1>Shopping Cart ({numItemsInCart} items)</h1>
+
+      {cart.length === 0 && <div>Your shopping cart is empty.</div>}
 
       {cart.map((entry) => {
         return (

@@ -91,6 +91,7 @@ const Shop = () => {
               key={product.id}
               product={product}
               addToCart={addToCart}
+              hasViewedCart={displayCart}
             />
           );
         })}
