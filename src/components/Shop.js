@@ -38,7 +38,7 @@ const Shop = () => {
       </div>
       <button onClick={() => {setDisplayCart(true)}}>Checkout</button>
 
-      {displayCart === true && <CartModal cart={cart}/>}
+      {displayCart === true && <CartModal cart={cart} numItemsInCart={numItemsInCart} calcNumItemsInCart={calcNumItemsInCart}/>}
       {displayCart === true && <div className="backdrop"></div>}
 
       <h1>Shop</h1>

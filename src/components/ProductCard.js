@@ -59,7 +59,8 @@ const ProductCard = (props) => {
       <div className="title">{props.product.title}</div>
       <div className="price">${props.product.price}</div>
       <div className="quantity-container">
-        <span>Quantity: </span>
+        <div>Quantity:</div>
+        <div>Limit 7</div>
         <QuantityControl quantity={quantity} quantityChange={quantityChange} />
       </div>
 

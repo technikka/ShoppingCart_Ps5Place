@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import QuantityControl from "./QuantityControl";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const CartModalProduct = (props) => {
-  const {productEntry} = props;
+  const { productEntry } = props;
 
-  const [quantity, setQuantity] = useState(productEntry.quantity)
+  const [quantity, setQuantity] = useState(productEntry.quantity);
 
   const quantityChange = (newQuantity) => {
     setQuantity(newQuantity);
@@ -12,26 +14,41 @@ const CartModalProduct = (props) => {
 
   const calculateProductTotal = () => {
     return (productEntry.product.price * quantity).toFixed(2);
-  }
+  };
 
-  const [totalPrice, setTotalPrice] = useState(calculateProductTotal())
+  const [totalPrice, setTotalPrice] = useState(calculateProductTotal());
+
+  const isInitialMount = useRef(true);
 
   useEffect(() => {
-  setTotalPrice(calculateProductTotal());
+    setTotalPrice(calculateProductTotal());
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+    } else {
+      props.editQuantityOfProduct(productEntry, quantity);
+    }
   }, [quantity]);
 
   return (
-    <div key={productEntry.product.id} className="product"> 
-            <img src={productEntry.product.image} alt="" />
-            <div className="title">{productEntry.product.title}</div>
-            <div>
-              <div>Qty</div>
-              <QuantityControl quantity={quantity} quantityChange={quantityChange}/>
-              <div>Limit 7</div>
-            </div>
-            <div>{totalPrice}</div>
-          </div>
-  )
-}
+    <div key={productEntry.product.id} className="product">
+      <img src={productEntry.product.image} alt="" />
+      <div className="title">{productEntry.product.title}</div>
+      <div>
+        <div>Qty</div>
+        <QuantityControl quantity={quantity} quantityChange={quantityChange} />
+        <div>Limit 7</div>
+      </div>
+      <div>
+        <div>{totalPrice}</div>
+        {quantity > 1 && <div>({productEntry.product.price} each)</div>}
+      </div>
+      <div>
+        <button onClick={props.removeProductFromCart}>
+          <FontAwesomeIcon icon={faTrash} /> Remove
+        </button>
+      </div>
+    </div>
+  );
+};
 
 export default CartModalProduct;
