@@ -8,15 +8,16 @@
   top: 20px;
   left: 20px;
   width: 90%;
-  /* transform-origin: center;
-  transform: translate(-50%, -80%);
-  transition: top 0.3s, opacity 0.3s; */
 
-  display: grid;
-  grid-gap: 20px;
+  /* display: grid;
+  grid-gap: 20px; */
 
   height: 90vh;
   overflow-y: auto;
+}
+
+.cart-modal h1 {
+  width: max-content;
 }
 
 .backdrop {
@@ -36,4 +37,19 @@
 
 .product img {
   height: 150px;
+}
+
+.exit-icon {
+  padding: 5px;
+  border: 1px solid black;
+  width: max-content;
+  margin-left: auto;
+}
+
+.exit-icon:hover {
+  cursor: pointer;
+}
+
+.exit-icon svg {
+  height: 30px;
 }

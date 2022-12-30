@@ -42,6 +42,18 @@ const Shop = () => {
     return num;
   };
 
+  const showModal = () => {
+    setDisplayCart(true);
+    let body = document.querySelector('body');
+    body.style.overflow = 'hidden';
+  }
+
+  const closeModal = () => {
+    let body = document.querySelector('body');
+    body.style.overflow = 'scroll';
+    setDisplayCart(false);
+  }
+
   useEffect(() => {
     setNumItemsInCart(calcNumItemsInCart());
   }, [cart]);
@@ -54,9 +66,7 @@ const Shop = () => {
         <FontAwesomeIcon icon={faCartShopping} />
       </div>
       <button
-        onClick={() => {
-          setDisplayCart(true);
-        }}
+        onClick={showModal}
       >
         Checkout
       </button>
@@ -68,6 +78,7 @@ const Shop = () => {
           editQuantityOfProduct={editQuantityOfProduct}
           removeProductFromCart={removeProductFromCart}
           calcNumItemsInCart={calcNumItemsInCart}
+          closeModal={closeModal}
         />
       )}
       {displayCart === true && <div className="backdrop"></div>}
