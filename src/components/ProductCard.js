@@ -10,7 +10,7 @@ const ProductCard = (props) => {
   const quantityRef = useRef(quantity);
 
   const quantityValid = () => {
-    if ([1, 2, 3, 4, 5, 6, 7].includes(quantity)) {
+    if (quantity > 0 && quantity <= props.product.orderLimit) {
       return true;
     } else {
       return false;
@@ -64,8 +64,8 @@ const ProductCard = (props) => {
       <div className="price">${props.product.price}</div>
       <div className="quantity-container">
         <div>Quantity:</div>
-        <div>Limit 7</div>
-        <QuantityControl quantity={quantity} quantityChange={quantityChange} />
+        <div>Limit {props.product.orderLimit}</div>
+        <QuantityControl quantity={quantity} quantityChange={quantityChange} orderLimit={props.product.orderLimit} />
       </div>
 
       {showSuccessMsg === true && addToCartSuccessMsg()}

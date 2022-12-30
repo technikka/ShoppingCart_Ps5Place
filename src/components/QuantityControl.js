@@ -12,14 +12,14 @@ const QuantityControl = (props) => {
   };
 
   const incrementQuantity = () => {
-    if (quantity < 7) {
+    if (quantity < props.orderLimit) {
       setQuantity(quantity + 1);
     }
   };
 
   const handleInput = (event) => {
     let value = parseInt(event.target.value);
-    if (value && [1, 2, 3, 4, 5, 6, 7].includes(value)) {
+    if (value && (value > 0) && (value <= props.orderLimit)) {
       setQuantity(value);
     }
   };
@@ -43,7 +43,7 @@ const QuantityControl = (props) => {
         type="number"
         required
         min="1"
-        max="7"
+        max={props.orderLimit}
         value={quantity}
         size="1"
       />

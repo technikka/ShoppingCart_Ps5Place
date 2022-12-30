@@ -35,8 +35,8 @@ const CartModalProduct = (props) => {
       <div className="title">{productEntry.product.title}</div>
       <div>
         <div>Qty</div>
-        <QuantityControl quantity={quantity} quantityChange={quantityChange} />
-        <div>Limit 7</div>
+        <QuantityControl quantity={quantity} quantityChange={quantityChange} orderLimit={productEntry.product.orderLimit}/>
+        <div>Limit {productEntry.product.orderLimit}</div>
       </div>
       <div>
         <div>{totalPrice}</div>

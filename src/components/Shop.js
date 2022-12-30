@@ -13,8 +13,18 @@ const Shop = () => {
   const [displayCart, setDisplayCart] = useState(false);
 
   const addToCart = (product, quantity) => {
-    let obj = { product: product, quantity: quantity };
-    setCart(cart.concat(obj));
+    const foundEntry = cart.find((entry) => entry.product.id === product.id);
+    if (foundEntry) {
+      const newQuantity = foundEntry.quantity + quantity;
+      if (newQuantity <= product.orderLimit) {
+        foundEntry.quantity = newQuantity;
+      } else {
+        foundEntry.quantity = product.orderLimit;
+      }
+    } else {
+      let entry = { product: product, quantity: quantity };
+      setCart(cart.concat(entry));
+    }
   };
 
   const removeProductFromCart = (entryToDelete) => {
@@ -44,15 +54,15 @@ const Shop = () => {
 
   const showModal = () => {
     setDisplayCart(true);
-    let body = document.querySelector('body');
-    body.style.overflow = 'hidden';
-  }
+    let body = document.querySelector("body");
+    body.style.overflow = "hidden";
+  };
 
   const closeModal = () => {
-    let body = document.querySelector('body');
-    body.style.overflow = 'scroll';
+    let body = document.querySelector("body");
+    body.style.overflow = "scroll";
     setDisplayCart(false);
-  }
+  };
 
   useEffect(() => {
     setNumItemsInCart(calcNumItemsInCart());
@@ -65,11 +75,7 @@ const Shop = () => {
         <div>{numItemsInCart}</div>
         <FontAwesomeIcon icon={faCartShopping} />
       </div>
-      <button
-        onClick={showModal}
-      >
-        Checkout
-      </button>
+      <button onClick={showModal}>Checkout</button>
 
       {displayCart === true && (
         <CartModal
