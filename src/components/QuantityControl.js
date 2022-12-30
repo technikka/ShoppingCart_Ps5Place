@@ -18,19 +18,11 @@ const QuantityControl = (props) => {
   };
 
   const handleInput = (event) => {
-    let value = event.target.value;
-    if (value) {
-      setQuantity(parseInt(value));
+    let value = parseInt(event.target.value);
+    if (value && [1, 2, 3, 4, 5, 6, 7].includes(value)) {
+      setQuantity(value);
     }
   };
-
-  // const quantityValid = () => {
-  //   if ([1, 2, 3, 4, 5, 6, 7].includes(quantity)) {
-  //     return true;
-  //   } else {
-  //     return false;
-  //   }
-  // };
 
   useEffect(() => {
     // for use with ProductCard's implementation of this component
@@ -38,7 +30,6 @@ const QuantityControl = (props) => {
       props.quantityChange(quantity);
     }
   }, [quantity]);
-
 
   return (
     <div>
