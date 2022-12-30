@@ -53,3 +53,8 @@
 .exit-icon svg {
   height: 30px;
 }
+
+.summary > div {
+  display: flex;
+  justify-content: space-between;
+}
