@@ -17,6 +17,23 @@ const Shop = () => {
     setCart(cart.concat(obj));
   };
 
+  const removeProductFromCart = (entryToDelete) => {
+    const arr = cart.filter(
+      (entry) => entry.product.id !== entryToDelete.product.id
+    );
+    setCart(arr);
+  };
+
+  const editQuantityOfProduct = (entryToEdit, newQuantity) => {
+    const arr = cart.map((entry) => {
+      if (entry.product.id === entryToEdit.product.id) {
+        entry.quantity = newQuantity;
+      }
+      return entry;
+    });
+    setCart(arr);
+  };
+
   const calcNumItemsInCart = () => {
     let num = 0;
     cart.forEach((obj) => {
@@ -36,9 +53,23 @@ const Shop = () => {
         <div>{numItemsInCart}</div>
         <FontAwesomeIcon icon={faCartShopping} />
       </div>
-      <button onClick={() => {setDisplayCart(true)}}>Checkout</button>
+      <button
+        onClick={() => {
+          setDisplayCart(true);
+        }}
+      >
+        Checkout
+      </button>
 
-      {displayCart === true && <CartModal cart={cart} numItemsInCart={numItemsInCart} calcNumItemsInCart={calcNumItemsInCart}/>}
+      {displayCart === true && (
+        <CartModal
+          cart={cart}
+          numItemsInCart={numItemsInCart}
+          editQuantityOfProduct={editQuantityOfProduct}
+          removeProductFromCart={removeProductFromCart}
+          calcNumItemsInCart={calcNumItemsInCart}
+        />
+      )}
       {displayCart === true && <div className="backdrop"></div>}
 
       <h1>Shop</h1>

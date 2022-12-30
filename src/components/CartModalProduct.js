@@ -43,7 +43,7 @@ const CartModalProduct = (props) => {
         {quantity > 1 && <div>({productEntry.product.price} each)</div>}
       </div>
       <div>
-        <button onClick={props.removeProductFromCart}>
+        <button onClick={() => {props.removeProductFromCart(productEntry)}}>
           <FontAwesomeIcon icon={faTrash} /> Remove
         </button>
       </div>
