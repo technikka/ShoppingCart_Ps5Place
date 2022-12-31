@@ -91,7 +91,6 @@ const Shop = () => {
 
   return (
     <div className="shop-container">
-      <Navbar />
       <div className="cart-icon">
         <div>{numItemsInCart}</div>
         <FontAwesomeIcon icon={faCartShopping} />
