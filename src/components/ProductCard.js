@@ -5,7 +5,6 @@ import QuantityControl from "./QuantityControl";
 const ProductCard = (props) => {
   const [quantity, setQuantity] = useState(1);
   const [showSuccessMsg, setShowSuccessMsg] = useState(false);
-  const [showErrorMsg, setShowErrorMsg] = useState(false);
 
   const quantityRef = useRef(quantity);
 
@@ -18,14 +17,12 @@ const ProductCard = (props) => {
   };
 
   const quantityChange = (newQuantity) => {
-    setShowErrorMsg(false);
     setShowSuccessMsg(false);
     setQuantity(newQuantity);
   };
 
   const handleAddToCart = () => {
     if (!quantityValid()) {
-      setShowErrorMsg(true);
       return;
     }
     quantityRef.current = quantity;
@@ -35,22 +32,12 @@ const ProductCard = (props) => {
 
   const addToCartSuccessMsg = () => {
     let message;
-    if (quantityRef.current === 1) {
-      message = "1 item was added to your cart.";
+    if (quantityRef.current > props.lastInCart.qty) {
+      message = `${props.lastInCart.qty} item(s) were added to your cart. Limit is ${props.product.orderLimit}.`
     } else {
-      message = `${quantityRef.current} items were added to your cart `;
+      message = `${quantityRef.current} item(s) were added to your cart.`
     }
     return <div className="cart-success-msg">{message}</div>;
-  };
-
-  const quantityErrorMsg = () => {
-    let message;
-    if (quantity < 1) {
-      message = "You must select at least 1 to add to your cart.";
-    } else if (quantity > 7) {
-      message = "I'm sorry, we limit 7 copies per customer.";
-    }
-    return <div className="cart-error-msg">{message}</div>;
   };
 
   useEffect(() => {
@@ -69,7 +56,6 @@ const ProductCard = (props) => {
       </div>
 
       {showSuccessMsg === true && addToCartSuccessMsg()}
-      {showErrorMsg === true && quantityErrorMsg()}
 
       <button onClick={handleAddToCart}>Add To Cart</button>
       <div className="description">{props.product.description}</div>

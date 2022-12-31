@@ -10,20 +10,41 @@ import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 const Shop = () => {
   const [cart, setCart] = useState([]);
   const [numItemsInCart, setNumItemsInCart] = useState(0);
+  const [lastInCart, setLastInCart] = useState({productId: 0, qty: 0 });
   const [displayCart, setDisplayCart] = useState(false);
 
+  const findInCart = (product) => {
+    return cart.find((entry) => entry.product.id === product.id);
+  };
+
+  const qtyCanAdd = (cartEntry) => {
+    const limit = cartEntry.product.orderLimit;
+    const current = cartEntry.quantity;
+    const leftToAdd = limit - current;
+    if (leftToAdd > 0) {
+      return leftToAdd
+    } else {
+      return 0
+    }
+  }
+
   const addToCart = (product, quantity) => {
-    const foundEntry = cart.find((entry) => entry.product.id === product.id);
+    const foundEntry = findInCart(product);
     if (foundEntry) {
-      const newQuantity = foundEntry.quantity + quantity;
-      if (newQuantity <= product.orderLimit) {
-        foundEntry.quantity = newQuantity;
+      const canAdd = qtyCanAdd(foundEntry);
+      if (canAdd >= quantity) {
+        foundEntry.quantity = foundEntry.quantity + quantity;
+        setNumItemsInCart(numItemsInCart + quantity);
+        setLastInCart({productId: product.id, qty: quantity});
       } else {
-        foundEntry.quantity = product.orderLimit;
+        foundEntry.quantity = foundEntry.quantity + canAdd;
+        setNumItemsInCart(numItemsInCart + canAdd);
+        setLastInCart({productId: product.id, qty: canAdd});
       }
     } else {
       let entry = { product: product, quantity: quantity };
       setCart(cart.concat(entry));
+      setLastInCart({productId: product.id, qty: quantity });
     }
   };
 
@@ -98,6 +119,7 @@ const Shop = () => {
               product={product}
               addToCart={addToCart}
               hasViewedCart={displayCart}
+              lastInCart={lastInCart}
             />
           );
         })}
