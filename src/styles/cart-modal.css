@@ -16,14 +16,6 @@
   width: max-content;
 }
 
-.backdrop {
-  pointer-events: none;
-  position: fixed;
-  inset: 0;
-  background: #000;
-  opacity: 50%;
-}
-
 .product {
   padding: 20px;
   background: white;

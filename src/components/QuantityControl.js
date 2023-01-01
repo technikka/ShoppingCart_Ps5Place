@@ -32,7 +32,7 @@ const QuantityControl = (props) => {
   }, [quantity]);
 
   return (
-    <div>
+    <div className="quantity-control">
       <button onClick={decrementQuantity} className="decrement">
         <FontAwesomeIcon icon={faAngleDown} />
       </button>

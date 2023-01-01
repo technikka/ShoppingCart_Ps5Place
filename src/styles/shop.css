@@ -1,5 +1,15 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  opacity: 50%;
+  z-index: 10;
+  cursor: auto;
+}
+
 .shop-container {
   background: #006FCD;
+  padding: 20px;
 }
 
 .sticky-banner {
@@ -37,10 +47,6 @@
   box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
 }
 
-.cart-container button:hover {
-
-}
-
 .cart-icon {
   display: grid;
   justify-items: center;
@@ -74,17 +80,6 @@ button:hover {
 
 .products-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 200px);
+  /* grid-template-rows: repeat(auto-fill, 200px); */
   grid-gap: 50px;
-}
-
-/* removes spinners/arrows for the number input */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-input[type=number]{
-  -moz-appearance: textfield;
 }
