@@ -12,6 +12,12 @@
   z-index: 50;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.sticky-banner img {
+  height: 50px;
+  filter: invert(18%) sepia(0%) saturate(2%) hue-rotate(10deg) brightness(99%) contrast(81%);
 }
 
 .cart-container {

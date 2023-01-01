@@ -6,6 +6,7 @@ import CartModal from "./CartModal";
 import { products } from "../products";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import playstationLogo from "../images/playstation-logotype.png";
 
 const Shop = () => {
   const [cart, setCart] = useState([]);
@@ -92,6 +93,7 @@ const Shop = () => {
   return (
     <div className="shop-container">
       <div className="sticky-banner">
+        <img src={playstationLogo} alt="" />
         <h1>Shop</h1>
         <div className="cart-container">
           <button onClick={showModal}>Checkout</button>
