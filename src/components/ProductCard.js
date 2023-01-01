@@ -5,6 +5,7 @@ import QuantityControl from "./QuantityControl";
 const ProductCard = (props) => {
   const [quantity, setQuantity] = useState(1);
   const [showSuccessMsg, setShowSuccessMsg] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const quantityRef = useRef(quantity);
 
@@ -44,8 +45,9 @@ const ProductCard = (props) => {
     setShowSuccessMsg(false);
   }, [props.hasViewedCart])
 
-  return (
-    <div className="product-card">
+  const modalView = () => {
+    return (
+      <div className="product-card-modal">
       <img src={props.product.image} alt="packaging for game with cover art" />
       <div className="title">{props.product.title}</div>
       <div className="price">${props.product.price}</div>
@@ -54,11 +56,19 @@ const ProductCard = (props) => {
         <div>Limit {props.product.orderLimit}</div>
         <QuantityControl quantity={quantity} quantityChange={quantityChange} orderLimit={props.product.orderLimit} />
       </div>
-
       {showSuccessMsg === true && addToCartSuccessMsg()}
-
       <button onClick={handleAddToCart}>Add To Cart</button>
-      <div className="description">{props.product.description}</div>
+      <div className="description-modal">{props.product.description}</div>
+    </div>
+    )
+  }
+
+  return (
+    <div onClick={() => {setShowModal(true)}} className="product-card">
+      <img src={props.product.image} alt="packaging for game with cover art" />
+      <div className="title">{props.product.title}</div>
+      <div className="price">${props.product.price}</div>
+      { showModal === true && modalView() }
     </div>
   );
 };

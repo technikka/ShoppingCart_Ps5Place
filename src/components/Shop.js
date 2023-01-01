@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
+import "../styles/root.css";
 import "../styles/shop.css";
-import Navbar from "./Navbar";
 import ProductCard from "./ProductCard";
 import CartModal from "./CartModal";
 import { products } from "../products";
