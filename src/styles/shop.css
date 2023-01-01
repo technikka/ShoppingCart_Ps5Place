@@ -2,6 +2,66 @@
   background: #006FCD;
 }
 
+.sticky-banner {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.cart-container {
+  grid-column-start: 3;
+  display: flex;
+  justify-self: end;
+  gap: 20px;
+}
+
+.cart-container button {
+  width: 120px;
+  font-size: 16px;
+  color: white;
+  border: none;
+  background-color: #c75c00;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+}
+
+.cart-container button:hover {
+
+}
+
+.cart-icon {
+  display: grid;
+  justify-items: center;
+}
+
+.cart-icon svg {
+  height: 28px;
+}
+
+.cart-icon:hover {
+  cursor: pointer;
+}
+
+.num-cart {
+  font-size: 20px;
+  display: inline-block;
+  width: min-content;
+}
+
+.shop-container h1 {
+  grid-column-start: 2;
+  align-self: center;
+  justify-self: center;
+  padding: 0;
+  margin: 0;
+}
+
 button:hover {
   cursor: pointer;
 }
@@ -10,14 +70,6 @@ button:hover {
   display: grid;
   grid-template-columns: repeat(auto-fill, 200px);
   grid-gap: 50px;
-}
-
-.cart-icon svg {
-  height: 24px;
-}
-
-.cart-icon:hover {
-  cursor: pointer;
 }
 
 /* removes spinners/arrows for the number input */

@@ -91,11 +91,17 @@ const Shop = () => {
 
   return (
     <div className="shop-container">
-      <div className="cart-icon">
-        <div>{numItemsInCart}</div>
-        <FontAwesomeIcon icon={faCartShopping} />
+      <div className="sticky-banner">
+        <h1>Shop</h1>
+        <div className="cart-container">
+          <button onClick={showModal}>Checkout</button>
+          <div className="cart-icon">
+            <div className="num-cart">{numItemsInCart}</div>
+            <FontAwesomeIcon icon={faCartShopping} />
+          </div>
+          
+        </div>
       </div>
-      <button onClick={showModal}>Checkout</button>
 
       {displayCart === true && (
         <CartModal
@@ -109,7 +115,6 @@ const Shop = () => {
       )}
       {displayCart === true && <div className="backdrop"></div>}
 
-      <h1>Shop</h1>
       <div className="products-container">
         {products.map((product) => {
           return (
