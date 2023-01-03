@@ -50,10 +50,10 @@ const ProductCard = (props) => {
           src={props.product.image}
           alt="packaging for game with cover art"
         />
-
-        <div className="title">{props.product.title}</div>
-        <div className="price">${props.product.price}</div>
-
+        <div className="details">
+          <div className="title">{props.product.title}</div>
+          <div className="price">${props.product.price}</div>
+        </div>
         <div className="quantity-container">
           <div className="quantity">
             <div className="label">Quantity:</div>
@@ -64,12 +64,10 @@ const ProductCard = (props) => {
             />
           </div>
           <div className="limit">Limit {props.product.orderLimit}</div>
+          <button className="add-to-cart-btn" onClick={handleAddToCart}>Add To Cart</button>
         </div>
-
-
-
         {showSuccessMsg === true && addToCartSuccessMsg()}
-        <button className="add-to-cart-btn" onClick={handleAddToCart}>Add To Cart</button>
+        
         <div className="description">{props.product.description}</div>
       </div>
   );
