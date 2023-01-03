@@ -14,32 +14,34 @@
 
 .cart-modal h1 {
   width: max-content;
-}
-
-.product {
-  padding: 20px;
-  background: white;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-}
-
-.product img {
-  height: 150px;
+  padding-bottom: 20px;
+  font-size: 24px;
 }
 
 .exit-icon {
-  padding: 5px;
-  border: 1px solid black;
   width: max-content;
-  margin-left: auto;
+  position: absolute;
+  right: 20px;
+}
+
+.exit-icon svg {
+  height: 40px;
+  filter: invert(60%) sepia(79%) saturate(6313%) hue-rotate(17deg) brightness(92%) contrast(101%);
 }
 
 .exit-icon:hover {
   cursor: pointer;
 }
 
-.exit-icon svg {
-  height: 30px;
+.continue-shopping-btn {
+  height: 50px;
+  width: 220px;
+  font-size: 16px;
+  color: white;
+  border: none;
+  background-color: #c75c00;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
 }
 
 .summary > div {

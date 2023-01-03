@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import "../styles/cart-modal-product.css";
 import QuantityControl from "./QuantityControl";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
@@ -33,20 +34,31 @@ const CartModalProduct = (props) => {
     <div key={productEntry.product.id} className="product">
       <img src={productEntry.product.image} alt="" />
       <div className="title">{productEntry.product.title}</div>
-      <div>
-        <div>Qty</div>
-        <QuantityControl quantity={quantity} quantityChange={quantityChange} orderLimit={productEntry.product.orderLimit}/>
-        <div>Limit {productEntry.product.orderLimit}</div>
+      <div className="quantity-container-cart">
+        <div className="quantity-cart">
+          <div className="label-cart">Qty:</div>
+          <QuantityControl
+            quantity={quantity}
+            quantityChange={quantityChange}
+            orderLimit={productEntry.product.orderLimit}
+          />
+        </div>
+        <div className="limit-cart">
+          Limit {productEntry.product.orderLimit}
+        </div>
       </div>
-      <div>
-        <div>{totalPrice}</div>
+      <div className="total-price">
+        <div >${totalPrice}</div>
         {quantity > 1 && <div>({productEntry.product.price} each)</div>}
       </div>
-      <div>
-        <button onClick={() => {props.removeProductFromCart(productEntry)}}>
-          <FontAwesomeIcon icon={faTrash} /> Remove
-        </button>
-      </div>
+      <button
+        className="remove-product-btn"
+        onClick={() => {
+          props.removeProductFromCart(productEntry);
+        }}
+      >
+        <FontAwesomeIcon icon={faTrash} /> Remove
+      </button>
     </div>
   );
 };

@@ -49,7 +49,7 @@ const CartModal = (props) => {
           />
         );
       })}
-      <button onClick={props.closeModal}>Continue Shopping</button>
+      <button className="continue-shopping-btn" onClick={props.closeModal}>Continue Shopping</button>
       <div className="summary">
         <h2>Summary</h2>
         <div>
