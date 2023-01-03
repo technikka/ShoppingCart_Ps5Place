@@ -97,11 +97,10 @@ const Shop = () => {
         <h1>Shop</h1>
         <div className="cart-container">
           <button onClick={showModal}>Checkout</button>
-          <div className="cart-icon">
+          <div onClick={showModal} className="cart-icon">
             <div className="num-cart">{numItemsInCart}</div>
             <FontAwesomeIcon icon={faCartShopping} />
           </div>
-          
         </div>
       </div>
 
