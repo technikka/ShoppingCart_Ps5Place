@@ -2,7 +2,6 @@
 
 An application built using React with the main focus to implement shopping cart functionality. Note that this is not a full feature e-commerce application, simply a demonstration of a shopping cart.
 
-
 * Number of items in cart is displayed and dynamically changes with the amount of items in shopping cart.
 
 * Success message shows when an item is added to the cart with quantity added. Success messages are removed when that product is selected again, or if the user views the cart.
@@ -13,4 +12,11 @@ An application built using React with the main focus to implement shopping cart 
 
 * Can remove item from cart and state of cart updates.
 
-Though a front-end router is implemented here, I didn't trouble myself with creating additional content outside the scope of this project due to time contraints. 
+Check it out live on github pages. [Shopping Cart App](https://technikka.github.io/ShoppingCart_Ps5Place/)
+
+Some screenshots from the application:
+
+<img src="./images/screenshot-shop-crop.jpg" height="550" width="600" alt="screenshot of shop page">
+
+
+<img src="./images/screenshot-cart-crop.jpg" height="550" width="600" alt="screenshot of cart modal">
