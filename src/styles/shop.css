@@ -2,8 +2,8 @@
   position: fixed;
   inset: 0;
   background: #000;
-  opacity: 50%;
-  z-index: 10;
+  opacity: 60%;
+  z-index: 50;
   cursor: auto;
 }
 
@@ -19,7 +19,7 @@
   margin-bottom: 20px;
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 30;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;

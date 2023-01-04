@@ -62,12 +62,12 @@ const CartModal = (props) => {
         </div>
         <div>
           <div>shipping</div>
-          <div>{shippingFee}</div>
+          <div>${shippingFee}</div>
         </div>
-        <div>
-        <h3>EST. TOTAL</h3>
-        <div>${calculateOrderTotal()}</div>
-      </div>
+        <div className="total">
+          <h3>EST. TOTAL</h3>
+          <div>${calculateOrderTotal()}</div>
+        </div>
       </div>
       
     </div>
