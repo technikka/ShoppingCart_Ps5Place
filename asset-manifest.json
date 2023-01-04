@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/ShoppingCart_Ps5Place/static/css/main.330cb630.css",
+    "main.js": "/ShoppingCart_Ps5Place/static/js/main.7406972f.js",
+    "static/media/evil_west.jpeg": "/ShoppingCart_Ps5Place/static/media/evil_west.7afe5deebcf87e54a19c.jpeg",
+    "static/media/uncharted.jpeg": "/ShoppingCart_Ps5Place/static/media/uncharted.503cd7895c07cbb63a4f.jpeg",
+    "static/media/horizon.jpeg": "/ShoppingCart_Ps5Place/static/media/horizon.57c0f2790d1b70247d78.jpeg",
+    "static/media/gran_turismo.jpeg": "/ShoppingCart_Ps5Place/static/media/gran_turismo.fe22b8a3c81e5020cb03.jpeg",
+    "static/media/gow.jpeg": "/ShoppingCart_Ps5Place/static/media/gow.4987b28a6f7b829b0e39.jpeg",
+    "static/media/returnal.jpeg": "/ShoppingCart_Ps5Place/static/media/returnal.1595b10ab3c2e5df6e4b.jpeg",
+    "static/media/steel_rising.jpeg": "/ShoppingCart_Ps5Place/static/media/steel_rising.858947541383b6f6b97d.jpeg",
+    "static/media/spider_man.jpeg": "/ShoppingCart_Ps5Place/static/media/spider_man.af0b9885d14a3bec096b.jpeg",
+    "static/media/last_of_us.jpeg": "/ShoppingCart_Ps5Place/static/media/last_of_us.5b0c983f103cd3865845.jpeg",
+    "static/media/octopath.jpeg": "/ShoppingCart_Ps5Place/static/media/octopath.e3d58d6b85deb0827423.jpeg",
+    "static/media/wild_hearts.jpeg": "/ShoppingCart_Ps5Place/static/media/wild_hearts.366dc28670f8fc35ea0a.jpeg",
+    "static/media/sniper.jpeg": "/ShoppingCart_Ps5Place/static/media/sniper.ea30077c5e292bf9e22d.jpeg",
+    "static/media/cod.jpeg": "/ShoppingCart_Ps5Place/static/media/cod.1c07c62cae274257e217.jpeg",
+    "static/media/borderlands.jpeg": "/ShoppingCart_Ps5Place/static/media/borderlands.79c020db84b01c124720.jpeg",
+    "static/media/elder_ring.jpeg": "/ShoppingCart_Ps5Place/static/media/elder_ring.7b669502012fd25bff7d.jpeg",
+    "static/media/thymesia.jpeg": "/ShoppingCart_Ps5Place/static/media/thymesia.7971e539c19d17cb4f4a.jpeg",
+    "index.html": "/ShoppingCart_Ps5Place/index.html",
+    "main.330cb630.css.map": "/ShoppingCart_Ps5Place/static/css/main.330cb630.css.map",
+    "main.7406972f.js.map": "/ShoppingCart_Ps5Place/static/js/main.7406972f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.330cb630.css",
+    "static/js/main.7406972f.js"
+  ]
+}
