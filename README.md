@@ -16,7 +16,7 @@ Check it out live on github pages. [Shopping Cart App](https://technikka.github.
 
 Some screenshots from the application:
 
-<img src="./images/screenshot-shop-crop.jpg" height="550" width="600" alt="screenshot of shop page">
+<img src="/public/screenshot-shop-crop.jpg" height="550" width="600" alt="screenshot of shop page">
 
 
-<img src="./images/screenshot-cart-crop.jpg" height="550" width="600" alt="screenshot of cart modal">
+<img src="/public/screenshot-cart-crop.jpg" height="550" width="600" alt="screenshot of cart modal">
