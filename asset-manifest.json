@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ShoppingCart_Ps5Place/static/css/main.330cb630.css",
-    "main.js": "/ShoppingCart_Ps5Place/static/js/main.7406972f.js",
+    "main.css": "/ShoppingCart_Ps5Place/static/css/main.963fbfa8.css",
+    "main.js": "/ShoppingCart_Ps5Place/static/js/main.76d6f454.js",
     "static/media/evil_west.jpeg": "/ShoppingCart_Ps5Place/static/media/evil_west.7afe5deebcf87e54a19c.jpeg",
     "static/media/uncharted.jpeg": "/ShoppingCart_Ps5Place/static/media/uncharted.503cd7895c07cbb63a4f.jpeg",
     "static/media/horizon.jpeg": "/ShoppingCart_Ps5Place/static/media/horizon.57c0f2790d1b70247d78.jpeg",
@@ -19,11 +19,11 @@
     "static/media/elder_ring.jpeg": "/ShoppingCart_Ps5Place/static/media/elder_ring.7b669502012fd25bff7d.jpeg",
     "static/media/thymesia.jpeg": "/ShoppingCart_Ps5Place/static/media/thymesia.7971e539c19d17cb4f4a.jpeg",
     "index.html": "/ShoppingCart_Ps5Place/index.html",
-    "main.330cb630.css.map": "/ShoppingCart_Ps5Place/static/css/main.330cb630.css.map",
-    "main.7406972f.js.map": "/ShoppingCart_Ps5Place/static/js/main.7406972f.js.map"
+    "main.963fbfa8.css.map": "/ShoppingCart_Ps5Place/static/css/main.963fbfa8.css.map",
+    "main.76d6f454.js.map": "/ShoppingCart_Ps5Place/static/js/main.76d6f454.js.map"
   },
   "entrypoints": [
-    "static/css/main.330cb630.css",
-    "static/js/main.7406972f.js"
+    "static/css/main.963fbfa8.css",
+    "static/js/main.76d6f454.js"
   ]
 }
