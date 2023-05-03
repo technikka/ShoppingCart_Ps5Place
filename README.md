@@ -1,22 +1,50 @@
 # Shopping Cart (Ps5 Place)
 
-An application built using React with the main focus to implement shopping cart functionality. Note that this is not a full feature e-commerce application, simply a demonstration of a shopping cart.
+A react app implementing shopping cart functionality. This is a mock shop, pretending to sell playstation games-- not a real e-commerce application. 
 
-* Number of items in cart is displayed and dynamically changes with the amount of items in shopping cart.
-
-* Success message shows when an item is added to the cart with quantity added. Success messages are removed when that product is selected again, or if the user views the cart.
-
-* Strict verification on quantity added to the cart for items with order limits.
-
-* When the quantity of an item in the cart changes either from the shop page or from within the cart, the cart's item count, and total cost for that product and its quantity changes.
-
-* Can remove item from cart and state of cart updates.
-
-Check it out live on github pages. [Shopping Cart App](https://technikka.github.io/ShoppingCart_Ps5Place/)
-
-Some screenshots from the application:
-
-<img src="/public/screenshot-shop-crop.jpg" height="550" width="600" alt="screenshot of shop page">
+This was the suggested final project of the React course at [The Odin Project](https://www.theodinproject.com/lessons/javascript-shopping-cart), practicing stable knowledge of the core concepts: state, props, and hooks.
 
 
-<img src="/public/screenshot-cart-crop.jpg" height="550" width="600" alt="screenshot of cart modal">
+### Accessing The App
+
+Check it out: [PS5 Place](https://technikka.github.io/ShoppingCart_Ps5Place/)
+
+
+## Technologies Used
+
+* React 18.2.0
+* [Font Awesome](https://fontawesome.com/)
+* [uniqid](https://github.com/adamhalasz/uniqid)
+
+
+## Description
+
+This is a basic mock shop only implementing functionality for its cart. Some of the features include:
+
+* Dynamically displays and updates the number of items in the cart.
+
+* Imposes limits on order quantity per item to implement strict validation.
+
+* Selecting quantity offers an input field and increment/decrement buttons.
+
+* Success message displaying the number of items added to cart, or alerts that 0 items were added if order quantity on item has been reached. Message is removed when that product is selected again, or if the cart is viewed.
+
+* Checkout modal allows for changing the quantity of selected items or removing them from the cart.
+
+* Dynamically updates item count, total cost for item row, and cart summary whenever the state of the cart changes, either from the shop page or from the checkout modal.
+
+
+#### Screenshots
+
+<img src="/public/screenshot-shop-crop.jpg" width="500" alt="screenshot of shop page">
+
+<img src="/public/screenshot-cart-crop.jpg" width="500" alt="screenshot of cart modal">
+
+
+### Setup/Installation
+
+To run this project locally:
+
+1. Clone this repository.
+2. Run `npm install` to install dependencies
+3. Run `npm start` to start development server
